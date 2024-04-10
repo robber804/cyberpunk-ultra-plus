@@ -481,8 +481,9 @@ end
 
 local function DoReGIRDI()
     config.reGIRDIHackApplied = true
+    SetOption("Editor/RTXDI", "EnableSeparateDenoising", false)
     SetOption("Editor/ReGIR", "UseForDI", false)
-    Wait(0.5, function()
+    Wait(0.7, function()
         SetOption("Editor/ReGIR", "UseForDI", true)
         SetOption("Editor/RTXDI", "EnableSeparateDenoising", true)
     end)
