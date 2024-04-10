@@ -480,6 +480,16 @@ function ResetEngine()
 end
 
 local function DoReGIRDI()
+--[[ required sequence
+    load the game with
+        - SeparateDenoising disabled (key!)
+        - ReGIR enabled both GI and DI
+
+    After game load
+        - Disable only ReGIR DI
+        - Re-enable ReGIR DI
+        - Enable Separate Denoising
+]]
     config.reGIRDIHackApplied = true
     SetOption("Editor/RTXDI", "EnableSeparateDenoising", false)
     SetOption("Editor/ReGIR", "UseForDI", false)
